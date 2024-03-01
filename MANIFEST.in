@@ -1,0 +1,4 @@
+recursive-include device_licenses/static *
+recursive-include device_licenses/templates *
+recursive-include device_licenses/api *
+prune device_licenses/api/__pycache__

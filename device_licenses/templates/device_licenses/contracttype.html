@@ -1,0 +1,39 @@
+{% extends 'generic/object.html' %}
+
+{% block content %}
+
+<div class="row mb-3">
+    <div class="col col-md-6">
+      <div class="card">
+        <h5 class="card-header">Device Contract</h5>
+        <div class="card-body">
+          <table class="table table-hover attr-table">
+            <tr>
+              <th>Type</th>
+              <td>{{ object.type }}</td>
+            </tr>
+            <tr>
+              <th>Manufacturer</th>
+              <td><a href="{{ object.manufacturer.get_absolute_url }}">{{ object.manufacturer }}</a></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="card">
+        {% comment %}
+        <h5 class="card-header">Contract Terms</h5>
+        <div class="card-body">
+          {% load render_table from django_tables2 %}
+          {% render_table terms_table %}
+        </div>
+        {% endcomment %}
+      </div>
+      {% include 'inc/panels/custom_fields.html' %}
+    </div>
+    <div class="col col-md-6">
+      {% include 'inc/panels/tags.html' %}
+      {% include 'inc/panels/comments.html' %}
+    </div>
+  </div>
+
+{% endblock content %}
